@@ -3,6 +3,7 @@ USING: tools.test io io.streams.null kernel namespaces sequences ;
 
 USE: examples.greeter 
 USE: Day2.Easy
+USE: Day2.Medium
 
 IN: examples.test-suite
 
