@@ -11,4 +11,8 @@ IN: examples.test-suite
     [ "examples" test ] with-null-writer 
     test-failures get empty?
     [ "All tests passed." print ] [ :test-failures ] if ;
-MAIN: test-all-examples
+: test-all-day2 ( -- )
+    [ "Day2" test ] with-null-writer 
+    test-failures get empty?
+    [ "All tests passed." print ] [ :test-failures ] if ;
+MAIN: test-all-day2
