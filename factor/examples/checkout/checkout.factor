@@ -26,7 +26,7 @@ TUPLE: checkout item-count base-price taxes shipping total-price ;
 CONSTANT: gst-rate 0.05
 CONSTANT: pst-rate 0.09975
 CONSTANT: vat-rate 0.25
-: gst-pst ( price -- taxes ) [ gst-rate * ] [ pst-rate * ] bi + ;
+: gst-pst ( price -- taxes ) [ gst-rate *   ] [ pst-rate * ] bi + ;
 : vat ( price -- taxes )  vat-rate *  ; 
 
 : taxes ( checkout taxes-calc -- taxes )
@@ -55,5 +55,4 @@ CONSTANT: flat-rate 2.00
 : sample-checkout ( checkout -- checkout )
     [ gst-pst ] taxes [ per-item ] shipping total ;
 
-: medium-checkout ( chekcout -- checkout ) 
-  [ vat ] taxes [ flat-ship ] flat-shipping total ;
+
