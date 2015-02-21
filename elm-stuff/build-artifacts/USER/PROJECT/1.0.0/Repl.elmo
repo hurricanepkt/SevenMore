@@ -11,20 +11,7 @@ Elm.Repl.make = function (_elm) {
    _P = _N.Ports.make(_elm),
    $moduleName = "Repl";
    var tsol = {ctor: "_Tuple0"};
-   var list = _L.fromArray([1
-                           ,2
-                           ,3]);
-   var deltron3030 = function () {
-      switch (list.ctor)
-      {case "::": return list._1;
-         case "[]":
-         return _L.fromArray([]);}
-      _U.badCase($moduleName,
-      "between lines 3 and 5");
-   }();
    _elm.Repl.values = {_op: _op
-                      ,deltron3030: deltron3030
-                      ,list: list
                       ,tsol: tsol};
    return _elm.Repl.values;
 };
