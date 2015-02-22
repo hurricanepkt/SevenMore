@@ -15,7 +15,7 @@ type Head = { x:Float, y:Float, vx:Float, vy:Float }
 type Player = { x:Float, score:Int }
 type Game = { state:State, heads:[Head], player:Player }
 
-defaultHead n = {x=100.0, y=75, vx=60, vy=0.0, img=headImage n }  -- (2)
+defaultHead n = {x=100.0, y=75, vx=0, vy=0.0, img=headImage n }  -- (2)
 defaultGame = { state   = Pause,
                 heads   = [], 
                 player  = {x=0.0, score=0} }
@@ -133,12 +133,12 @@ display ({state, heads, player} as game) =   -- (15)
        , drawMessage w h state] ++ 
        (drawHeads w h heads))
 
-drawRoad w h =   -- (16)
-  filled gray (rect (toFloat w) 100) 
+drawRoad w h =   -- (16)  
+  toForm (image  w 100 "img/Asphalt.jpg")
   |> moveY (-(half h) + 50)
   
 drawBuilding w h =
-  filled red (rect 100 (toFloat h)) 
+  toForm (image  100 h "img/Brick.jpg")
   |> moveX (-(half w) + 50)
 
 drawHeads w h heads = map (drawHead w h) heads   -- (17)

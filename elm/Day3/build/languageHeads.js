@@ -76,19 +76,17 @@ Elm.LanguageHead.make = function (_elm) {
    });
    var drawBuilding = F2(function (w,
    h) {
-      return $Graphics$Collage.moveX(0 - half(w) + 50)(A2($Graphics$Collage.filled,
-      $Color.red,
-      A2($Graphics$Collage.rect,
+      return $Graphics$Collage.moveX(0 - half(w) + 50)($Graphics$Collage.toForm(A3($Graphics$Element.image,
       100,
-      $Basics.toFloat(h))));
+      h,
+      "img/Brick.jpg")));
    });
    var drawRoad = F2(function (w,
    h) {
-      return $Graphics$Collage.moveY(0 - half(h) + 50)(A2($Graphics$Collage.filled,
-      $Color.gray,
-      A2($Graphics$Collage.rect,
-      $Basics.toFloat(w),
-      100)));
+      return $Graphics$Collage.moveY(0 - half(h) + 50)($Graphics$Collage.toForm(A3($Graphics$Element.image,
+      w,
+      100,
+      "img/Asphalt.jpg")));
    });
    var complete = function (_v0) {
       return function () {
@@ -173,7 +171,7 @@ Elm.LanguageHead.make = function (_elm) {
    var defaultHead = function (n) {
       return {_: {}
              ,img: headImage(n)
-             ,vx: 60
+             ,vx: 0
              ,vy: 0.0
              ,x: 100.0
              ,y: 75};
