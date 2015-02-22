@@ -171,7 +171,7 @@ Elm.LanguageHead.make = function (_elm) {
    var defaultHead = function (n) {
       return {_: {}
              ,img: headImage(n)
-             ,vx: 0
+             ,vx: 40
              ,vy: 0.0
              ,x: 100.0
              ,y: 75};

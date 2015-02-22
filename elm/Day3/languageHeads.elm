@@ -15,7 +15,7 @@ type Head = { x:Float, y:Float, vx:Float, vy:Float }
 type Player = { x:Float, score:Int }
 type Game = { state:State, heads:[Head], player:Player }
 
-defaultHead n = {x=100.0, y=75, vx=0, vy=0.0, img=headImage n }  -- (2)
+defaultHead n = {x=100.0, y=75, vx=40, vy=0.0, img=headImage n }  -- (2)
 defaultGame = { state   = Pause,
                 heads   = [], 
                 player  = {x=0.0, score=0} }
