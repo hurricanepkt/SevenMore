@@ -15,7 +15,9 @@ type Head = { x:Float, y:Float, vx:Float, vy:Float }
 type Player = { x:Float, score:Int }
 type Game = { state:State, heads:[Head], player:Player }
 
-defaultHead n = {x=100.0, y=75, vx=40, vy=0.0, img=headImage n }  -- (2)
+defaultHead n = {x=100.0, y=75, vx= 40 + n , vy=0.0, img=headImage n }  -- (2)
+
+
 defaultGame = { state   = Pause,
                 heads   = [], 
                 player  = {x=0.0, score=0} }
@@ -74,9 +76,9 @@ stepHeads heads delta x score rand =    -- (5)
   |> moveHeads delta
   
 spawnHead score heads rand =   -- (6)
-  let addHead = length heads < (score // 5000 + 1) 
+  let addHead = length heads < (score // 5000 + 2) 
     && all (\head -> head.x > 107.0) heads in 
-  if addHead then defaultHead rand :: heads else heads
+  if addHead then defaultHead rand :: heads  else heads
 
 bounceHeads heads = map bounce heads      -- (7)
 

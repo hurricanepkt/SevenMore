@@ -171,7 +171,7 @@ Elm.LanguageHead.make = function (_elm) {
    var defaultHead = function (n) {
       return {_: {}
              ,img: headImage(n)
-             ,vx: 40
+             ,vx: 40 + n
              ,vy: 0.0
              ,x: 100.0
              ,y: 75};
@@ -181,7 +181,7 @@ Elm.LanguageHead.make = function (_elm) {
    rand) {
       return function () {
          var addHead = _U.cmp($List.length(heads),
-         (score / 5000 | 0) + 1) < 0 && A2($List.all,
+         (score / 5000 | 0) + 2) < 0 && A2($List.all,
          function (head) {
             return _U.cmp(head.x,
             107.0) > 0;
@@ -373,7 +373,7 @@ Elm.LanguageHead.make = function (_elm) {
               input,
               game);}
          _E.Case($moduleName,
-         "between lines 49 and 53");
+         "between lines 51 and 55");
       }();
    });
    var gameState = A3($Signal.foldp,
