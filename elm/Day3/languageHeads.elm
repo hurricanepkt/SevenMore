@@ -76,9 +76,10 @@ stepHeads heads delta x score rand =    -- (5)
   |> moveHeads delta
   
 spawnHead score heads rand =   -- (6)
-  let addHead = length heads < (score // 5000 + 2) 
-    && all (\head -> head.x > 107.0) heads in 
-  if addHead then defaultHead rand :: heads  else heads
+  let addHead = length heads < (score // 5000 + 1) 
+    && all (\head -> head.x > 200.0) heads in 
+  let randomHead = defaultHead rand in
+  if addHead then { randomHead - vx | vx = (40 + rand * 10) } :: heads else heads
 
 bounceHeads heads = map bounce heads      -- (7)
 

@@ -181,14 +181,17 @@ Elm.LanguageHead.make = function (_elm) {
    rand) {
       return function () {
          var addHead = _U.cmp($List.length(heads),
-         (score / 5000 | 0) + 2) < 0 && A2($List.all,
+         (score / 200 | 0) + 1) < 0 && A2($List.all,
          function (head) {
             return _U.cmp(head.x,
-            107.0) > 0;
+            7.0) > 0;
          },
          heads);
+         var randomHead = defaultHead(rand);
          return addHead ? A2($List._op["::"],
-         defaultHead(rand),
+         _U.insert("vx",
+         40 + rand * 10,
+         _U.remove("vx",randomHead)),
          heads) : heads;
       }();
    });
